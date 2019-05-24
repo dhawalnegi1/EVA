@@ -1,1 +1,95 @@
-yes
+# How many layers - 
+
+As the number of parameters is restricted to 15k the number of layers should be less.
+
+# Kernels and how do we decide the number of kernels? -
+
+Depending on the number of channels the number of kernals are decided.
+
+# 3x3 Convolutions - 
+
+Decrease the matrix size by 2
+
+# Receptive Field -
+
+Global receptive field should be calculated after each layer
+
+# MaxPooling - 
+
+It should is add to reduce the size of input.
+
+# Position of MaxPooling -
+
+It is placed such that proper edges and gradients can be found.
+
+# The distance of MaxPooling from Prediction - 
+
+The max pooling should be placed atleast 3-4 layers away from the prediction layer.
+
+# 1x1 Convolutions -
+
+A 1x1 convolution simply maps an input pixel with all it's channels to an output pixel.
+
+# Concept of Transition Layers - 
+
+Its applied to reduce the number of channels.
+
+# Position of Transition Layer -
+
+It can be applied after of before max pooling. I have applied it after max pooling.
+
+# When do we stop convolutions and go ahead with a larger kernel or some other alternative (which we have not yet covered) -
+
+When we have reached a kernal size between 7-11 or atleast 3-4 layers from last max pooling. 
+
+# Batch Normalization - 
+
+It is applied to reduce the values to -1 to 1.
+
+# The distance of Batch Normalization from Prediction - 
+
+It shouldn't be applied before the prediction layer.
+
+# Image Normalization -
+
+To help model work better in various light condition we add image normalization.
+
+# SoftMax -
+
+It is added at the end of the model to get a clear domination
+
+# Number of Epochs and when to increase them -
+
+When the current accuracy is reaching the required accuracy
+
+# When to add validation checks - 
+
+When we want to monitor the test accuracy at each epoch.
+
+# Learning Rate - 
+
+It can be altered as and when needed to train the network better.
+
+# LR schedule and concept behind it -
+
+To help the model learn faster we can use learning rate, different models have different learning rate.
+
+# Batch Size, and effects of batch size - 
+
+As we increase the batch size the training time per epoch reduces.
+
+# DropOut -
+
+It drops some information randomly.
+
+# When do we introduce DropOut, or when do we know we have some overfitting -
+
+When we want to train our model with random selection we use dropout.
+
+# How do we know our network is not going well, comparatively, very early -
+
+Looking at the first two epoch values we can conclude whether the network is going well or not. 
+
+# Adam vs SGD - 
+
+Adam peforms computation on the whole dataset whereas SDG performs computation on random subsets but with lower learning rate. 
